@@ -10,7 +10,7 @@
 }
 
 .wrapper {
-  width: 50vw;
+  width: 60vw;
   margin: auto;
   padding: 5vw;
 }
@@ -50,7 +50,7 @@ button {
 
 .result {
   position: relative;
-  width: 100%;
+  width: 90%;
   padding: 15px;
   background-color: rgb(240, 240, 240);
   line-height: 30px;
@@ -78,7 +78,7 @@ header span {
 
 @media (max-width: 599px) {
 .wrapper {
-  width: 80%;
+  width: 100%;
 }
 
   header p {

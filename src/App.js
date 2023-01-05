@@ -12,6 +12,8 @@ const App = () => {
   const [experience, setExperience] = useState('');
   const [isloading, setIsloading] = useState(false);
 
+
+
   const configuration = new Configuration({
     apiKey: process.env.REACT_APP_OPEN_AI_KEY,
   });
