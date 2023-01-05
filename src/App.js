@@ -13,7 +13,7 @@ const App = () => {
   const [isloading, setIsloading] = useState(false);
 
   const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: process.env.REACT_APP_OPEN_AI_KEY,
   });
   const openai = new OpenAIApi(configuration);
 
