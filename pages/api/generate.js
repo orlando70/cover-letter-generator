@@ -1,7 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai';
 
 
-
 export default async function handler(req, res) {
   const { company, experience, skills, name, position } = req.body;
 
@@ -10,14 +9,16 @@ export default async function handler(req, res) {
   });
   const openai = new OpenAIApi(configuration);
 
-  const prompt = `You are a cover letter writer. Your will help job seekers write a perfect cover 
-    letter. You will use company name as ${company}, work experience as ${experience}, 
-    skills as ${skills}, applicant's name as ${name}, job position as ${position}.
-    Elaborate on the different skills and efficiently absorb them into the final result. Be creative.`
+  const prompt = `Hello, AI! I'm a cover letter writer and I need your help crafting a perfect 
+  letter for a job seeker named ${name}. They're applying to work at ${company} as a ${position}, and they 
+  have ${experience} years of experience and the following skills: ${skills}. 
+  Can you please write a cover letter that highlights their relevant experience and skills, 
+  and explains why they're a great fit for the position? Make it engaging and persuasive, 
+  but keep it professional. Thanks!`
 
     const response = await openai.createCompletion({
       prompt,
-      temperature: 0,
+      temperature: 0.7,
       max_tokens: 1024,
       top_p: 1,
       frequency_penalty: 0,

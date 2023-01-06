@@ -8,15 +8,19 @@
 # testing
 /coverage
 
+<<<<<<< HEAD
 # next.js
 /.next/
 /out/
 
+=======
+>>>>>>> 527f01b7e3764829ebdbf9ac478adffc48ff7d1c
 # production
 /build
 
 # misc
 .DS_Store
+<<<<<<< HEAD
 *.pem
 
 # debug
@@ -31,3 +35,14 @@ yarn-error.log*
 
 # vercel
 .vercel
+=======
+.env.local
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+>>>>>>> 527f01b7e3764829ebdbf9ac478adffc48ff7d1c

@@ -5,40 +5,40 @@ import styles from "../styles/Home.module.css";
 
 
 const App = () => {
-  const [company, setCompany] = useState('');
-  const [name, setName] = useState('');
-  const [skills, setSkills] = useState('');
+  const [formData, setFormData] = useState({
+    company: '',
+    name: '',
+    skills: '',
+    position: '',
+    experience: ''
+  });
   const [result, setResult] = useState('');
-  const [position, setPosition] = useState('');
-  const [experience, setExperience] = useState('');
-  const [isloading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const data = {
-    company,
-    name,
-    skills,
-    position,
-    experience
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
 
-  async function handleSubmit(e) {
-    e.preventDefault()
-    setIsloading(true);
+    try {
+      const result = await axios.post('/api/generate', formData);
+      setResult(result.data);
+    } catch (err) {
+      setError(err);
+    }
 
-    const result = await axios.post('/api/generate', data).catch(err => { setError(err); });
-
-    setResult(result.data);
-    setIsloading(false);
+    setIsLoading(false);
   }
 
-  function CopyButton({ text }) {
-    const handleClick = () => {
-      navigator.clipboard.writeText(text);
-    };
-
-    return <p style={{ fontSize: '13px' }} onClick={handleClick}>Copy to Clipboard</p>;
+  const handleCopy = () => {
+    navigator.clipboard.writeText(result);
   }
 
   return (
@@ -53,30 +53,40 @@ const App = () => {
           <header className={styles.header}>
             <p>Generate a <span>Cover Letter</span> in seconds.</p>
           </header>
-          <form className={styles.form} onSubmit={(e) => { handleSubmit(e) }}>
-            <label>Company:</label>
-            <input type='text' required onChange={(e) => { setCompany(e.target.value) }} />
-
-            <label>Name:</label>
-            <input type='text' required onChange={(e) => { setName(e.target.value) }} />
-
-            <label>Position:</label>
-            <input type='text' required onChange={(e) => { setPosition(e.target.value) }} />
-
-            <label>Skills:</label>
-            <textarea type='text' required placeholder='Outline all your skills' onChange={(e) => { setSkills(e.target.value) }} />
-
-            <label>Years of Experience:</label>
-            <input type='number' required onChange={(e) => { setExperience(e.target.value) }} />
-
-            <button className={styles.button} type='submit'>Submit</button>
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <label>
+              Company:
+              <input type="text" name="company" value={formData.company} onChange={handleChange} />
+            </label>
+            <br />
+            <label>
+              Name:
+              <input type="text" name="name" value={formData.name} onChange={handleChange} />
+            </label>
+            <br />
+            <label>
+              Position:
+              <input type="text" name="position" value={formData.position} onChange={handleChange} />
+            </label>
+            <br />
+            <label>
+              Skills:
+              <textarea name="skills" placeholder='Outline your skills' value={formData.skills} onChange={handleChange} />
+            </label>
+            <br />
+            <label>
+              Years of Experience:
+              <input type="number" name="experience" value={formData.experience} onChange={handleChange} />
+            </label>
+            <br />
+            <button className={styles.button} type="submit">Generate Cover Letter</button>
+            {result && <button className={styles.button} onClick={handleCopy}>Copy to Clipboard</button>}
+            {isLoading && <p>Generating cover letter...</p>}
+            {error && <p>An error occurred: {error.message}</p>}
+            <br />
+            <br />
+            {result && <p className={styles.result}> {result}</p>}
           </form>
-          <div className={styles.result}>
-            <div className={styles.copy}>
-              {result && <CopyButton text={result} />}
-            </div>
-            {isloading ? <p>Generating cover letter...</p> : <span style={{ whiteSpace: "pre-wrap" }}> {result}</span>}
-          </div>
         </div>
       </div>
     </>

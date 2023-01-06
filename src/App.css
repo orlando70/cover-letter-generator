@@ -1,3 +1,7 @@
+:root {
+  --primary-font: "Poppins", sans-serif;
+}
+
 .container {
   box-sizing: border-box;
   display: flex;
@@ -12,7 +16,7 @@
 }
 
 .wrapper input,
-.wrapper textarea {
+textarea {
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -23,7 +27,7 @@
   font-size: 20px;
 }
 
-.form label {
+label {
   font-size: 18px;
   font-family: var(--primary-font);
   font-weight: 500;
@@ -33,7 +37,7 @@
   height: 10vh;
 }
 
-.button {
+button {
   padding: 10px;
   margin: 10px;
   border: none;
@@ -45,29 +49,39 @@
 }
 
 .result {
+  position: relative;
   width: 90%;
   padding: 15px;
   background-color: rgb(240, 240, 240);
-  line-height: 40px;
+  line-height: 30px;
   font-size: 18px;
-  white-space: pre-wrap;
+  font-family: var(--primary-font);
 }
 
-.header p {
+.copy {
+  height: 40px;
+  width: 150px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  cursor: pointer;
+}
+
+header p {
   font-family: var(--primary-font);
   font-size: 35px;
 }
 
-.header span {
+header span {
   color: orange;
 }
 
 @media (max-width: 599px) {
-  .wrapper {
-    width: 100%;
-  }
+.wrapper {
+  width: 100%;
+}
 
-  .header p {
+  header p {
     font-size: 25px;
   }
 }
