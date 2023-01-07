@@ -29,7 +29,7 @@ Usage
 -----
 
 1.  Enter your company name, name, position, skills, and years of experience in the form.
-2.  Click the "Submit" button to generate your cover letter.
+2.  Click the "Generate Cover Letter" button to generate your cover letter.
 3.  Click the "Copy to Clipboard" button to copy the generated cover letter to your clipboard.
 4.  Paste the cover letter into your application.
 
