@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Cover Letter Generator
+======================
 
-## Getting Started
+This repository contains a web application that allows users to generate professional cover letters in seconds.
 
-First, run the development server:
+Getting Started
+---------------
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1.  Clone the repository
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    `git clone https://github.com/orlando70/cover-letter-generator.git`
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1.  Install the dependencies
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+    `cd cover-letter-generator
+npm install`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1.  Set up the environment variables Create a `.env` file in the root of the project and add your OpenAI API key:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    `OPEN_AI_KEY=your_api_key_here`
 
-## Learn More
+1.  Start the development server
 
-To learn more about Next.js, take a look at the following resources:
+    `npm run dev`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  Open the app in your browser at `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Usage
+-----
 
-## Deploy on Vercel
+1.  Enter your company name, name, position, skills, and years of experience in the form.
+2.  Click the "Submit" button to generate your cover letter.
+3.  Click the "Copy to Clipboard" button to copy the generated cover letter to your clipboard.
+4.  Paste the cover letter into your application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Built With
+----------
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+-   [Next.js](https://nextjs.org/) - A framework for building server-rendered React applications.
+-   [OpenAI](https://openai.com/) - A research laboratory consisting of the for-profit corporation OpenAI LP and its parent company, the non-profit OpenAI Inc.
