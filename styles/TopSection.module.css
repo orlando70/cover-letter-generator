@@ -1,0 +1,20 @@
+.container {
+    height: calc(97vh - 70px);
+    width: 100%;
+}
+
+.wrapper, .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header {
+    height: 200px;
+    width: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid red;
+    font-family: var(--primary-font);
+}
