@@ -7,7 +7,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'i.ibb.co',
         port: '',
-        pathname: '/1JdV7q0/logo-color.png/**',
+        pathname: '/b7Q8rD2/cova-high-resolution-logo-color-on-transparent-background.png/**',
       },
     ],
   },

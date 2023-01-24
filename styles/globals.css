@@ -1,4 +1,12 @@
+@import url('https://fonts.cdnfonts.com/css/roobert?styles=49577,49581,49571,49573');
+                                
+
 :root {
   --primary-font: "Poppins", sans-serif;
+  --secondary-font: "Roobert", sans-serif;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
