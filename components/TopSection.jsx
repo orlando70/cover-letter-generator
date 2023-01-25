@@ -1,35 +1,25 @@
 import React from 'react';
 import styles from '../styles/TopSection.module.css';
-import Image from 'next/image';
 import Link from 'next/link';
+import Header from './Header';
+import Button from './Button';
 
 
 const TopSection = () => {
     return (
         <div className={styles.container}>
-            <div className={styles.logo}>
-                <Image
-                    src='https://i.ibb.co/b7Q8rD2/cova-high-resolution-logo-color-on-transparent-background.png'
-                    alt="logo"
-                    width={100}
-                    height={50}
-                    className={styles.img}
-                />
-            </div>
+            <Header />
             <div className={styles.wrapper}>
                 <div className={styles.header}>
-                    <p>Supercharge your</p>
-                    <span>job search</span>
+                    <p>Supercharge your <span>job search</span> with AI</p>
                 </div>
-                <div className={styles.description}>
-                    <p>Increase your chances of landing an interview by generating highly personalized</p>
-                    <p>and professional-sounding cover letter that are tailored to the specific job you are applying for.</p>
+            <div className={styles.description}>
+                    <p>Increase your chances of landing an interview by generating highly personalized and professional cover letter that are tailored to the specific job you are applying for.</p>
                 </div>
-                <Link href="/generate">
-                    <button className={`${styles.btna} ${styles.btnb}`}>Try it for free</button>
+            <Link href="/generate">
+                    <Button text={"Try it for free"}/>
                 </Link>
-                <span>No Email. No Signup.</span>
-                <div></div>
+            <span>No Email. No Signup.</span>
             </div>
         </div>
     )

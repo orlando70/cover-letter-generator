@@ -1,32 +1,39 @@
 .container {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #000000;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   width: 60vw;
+  height: 70%;
   margin: auto;
-  padding: 5vw;
 }
 
 .wrapper input,
 .wrapper textarea {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  padding: .5rem .8rem .5rem .8rem;
-  margin: .9vw 0;
+  width: 100%;
+  margin: auto;
   border: 0.3px solid rgb(253, 230, 188);
   border-radius: 5px;
   font-size: 20px;
+}
+
+.form, .bottom {
+  width: 100%;
 }
 
 .form label {
   font-size: 18px;
   font-family: var(--primary-font);
   font-weight: 500;
+  color: white;
 }
 
 .wrapper textarea {
@@ -34,8 +41,11 @@
 }
 
 .button {
+  position: absolute;
+  right: 5px;
+  top: 0;
   padding: 10px;
-  margin: 10px;
+  margin-top: 20px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -46,28 +56,57 @@
 
 .result {
   width: 90%;
+  height: auto;
+  position: relative;
   padding: 15px;
   background-color: rgb(240, 240, 240);
   line-height: 40px;
   font-size: 18px;
   white-space: pre-wrap;
+  font-family: var(--secondary-font);
 }
 
 .header p {
   font-family: var(--primary-font);
   font-size: 35px;
+  color: white;
 }
 
 .header span {
-  color: orange;
+  color: #bc7afe;
 }
 
-@media (max-width: 599px) {
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 280px) and (max-width: 768px) {
   .wrapper {
-    width: 100%;
+    max-width: 90%;
+    margin-top: 30px;
   }
 
   .header p {
     font-size: 25px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .wrapper {
+    margin-top: 30px;
+    height: 65%;
+  }
+
+  .header {
+    display: none;
   }
 }

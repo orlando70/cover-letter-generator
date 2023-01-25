@@ -1,0 +1,48 @@
+.btna {
+    padding: 15px 25px;
+    font-family: var(--secondary-font);
+    background: transparent;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 25px 0;
+  }
+  
+  .btnb {
+    border: 2px solid rgb(255, 255, 255);
+    z-index: 1;
+    color: white;
+  }
+  
+  .btnb:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  
+  .btnb:hover {
+    color: rgb(0, 0, 0);
+  }
+  
+  .btnb:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  
+  .btnb:active {
+    top: 2px;
+  }

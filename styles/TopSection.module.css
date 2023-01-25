@@ -1,29 +1,12 @@
 .container {
-    max-height: 100vh;
-    max-width: 100%;
+    background-color: black;
+    height: 100vh;
+    width: 100%;
     margin: auto;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    overflow: auto;
-    background-color: #19152b;
-    /* background: linear-gradient(315deg, #dfdcf1 3%, #d3b0f5 38%, #5438f3 68%, #19152b 98%); */
-    animation: gradient 15s ease infinite;
-    background-size: 400% 400%;
-    background-attachment: fixed;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
-.wrapper, .header {
+.wrapper,
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,22 +16,12 @@
 .wrapper span {
     color: white;
     font-family: var(--secondary-font);
-    margin: 15px 0;
 }
 
 .header span {
     color: #bc7afe;
 }
 
-.header {
-    margin-top: 50px;
-    height: 200px;
-    width: 50%;
-    font-size: 80px;
-    font-weight: 900;
-    color: white;
-    font-family: var(--secondary-font);
-}
 
 .img {
     object-fit: contain;
@@ -58,61 +31,80 @@
     padding: 30px;
 }
 
+.header {
+    height: 200px;
+    width: 50%;
+    font-size: 80px;
+    font-weight: 900;
+    color: white;
+    font-family: var(--secondary-font);
+    text-align: center;
+}
+
 .description {
-    margin: 30px 0;
     color: white;
     font-family: var(--secondary-font);
     font-size: 20px;
     text-align: center;
     font-weight: 500;
+    padding: 20px;
+    width: 50%;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .description {
+        margin: 0;
+        width: 70%;
+        padding: 10px;
+    }
+    .header {
+        margin-top: 40px;
+        height: 200px;
+        width: 90%;
+        font-size: 50px;
+        font-weight: 900;
+    }
 
-.btna {
-    padding: 15px 25px;
-    font-family: var(--secondary-font);
-    background: transparent;
-    outline: none !important;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    border-radius: 10px;
-    overflow: hidden;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 25px 0;
-  }
-  
-  .btnb {
-    border: 2px solid rgb(255, 255, 255);
-    z-index: 1;
-    color: white;
-  }
-  
-  .btnb:after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    direction: rtl;
-    z-index: -1;
-    background: rgb(255, 255, 255);
-    transition: all 0.3s ease;
-  }
-  
-  .btnb:hover {
-    color: rgb(0, 0, 0);
-  }
-  
-  .btnb:hover:after {
-    left: auto;
-    right: 0;
-    width: 100%;
-  }
-  
-  .btnb:active {
-    top: 2px;
-  }
+    .logo {
+        padding: 10px;
+    }
+
+    .img {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .description {
+        margin: 0;
+        width: 90%;
+        padding: 10px;
+        font-size: 13px;
+    }
+    .header {
+        height: 150px;
+        width: 100%;
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .img {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .description {
+        margin: 10px 0;
+        width: 50%;
+        padding: 40px;
+    }
+    .header {
+        height: 150px;
+        width: 70%;
+        font-size: 60px;
+        font-weight: 900;
+    }
+}
