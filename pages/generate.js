@@ -46,7 +46,7 @@ const App = () => {
       })
       
       if (!result.ok) {
-        setError(result.statusText);
+        setError("Check your network and try again");
       }
   
       // This data is a ReadableStream
@@ -137,8 +137,7 @@ const App = () => {
             </div>
           </form>
           <div className={styles.bottom}>
-            {error && errorToast()}
-            {result && 
+            {error ? errorToast() && <div style={{display: "none"}}></div> : result && 
             <div className={styles.result} ref={ref} key={"prompt"}>
               <button className={styles.button} onClick={handleCopy}>Copy</button>
               {result}

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.1",
+    "@vercel/analytics": "^0.1.8",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "eventsource-parser": "^0.0.5",

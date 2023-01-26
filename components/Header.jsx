@@ -3,6 +3,7 @@ import styles from '../styles/TopSection.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import GitHubButton from 'react-github-btn'
+import logo from "../public/cova-high-resolution-logo-color-on-transparent-background.png"
 
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
             <div className={styles.topHeader}>
                 <Link href="/">
                     <Image
-                        src='https://i.ibb.co/b7Q8rD2/cova-high-resolution-logo-color-on-transparent-background.png'
+                        src={logo}
                         alt="logo"
                         width={100}
                         height={50}

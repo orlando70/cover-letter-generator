@@ -23,9 +23,11 @@
   border: 0.3px solid rgb(253, 230, 188);
   border-radius: 5px;
   font-size: 20px;
+  padding: 10px;
 }
 
-.form, .bottom {
+.form,
+.bottom {
   width: 100%;
   margin-bottom: 40px;
 }
@@ -104,6 +106,11 @@
 
   .result {
     width: 100%;
+  }
+
+  .wrapper input,
+  .wrapper textarea {
+    padding: 0;
   }
 }
 
