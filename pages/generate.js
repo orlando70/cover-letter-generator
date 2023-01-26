@@ -1,5 +1,4 @@
-import { useState, React } from 'react';
-import axios from 'axios';
+import { useState, React, useRef, useEffect} from 'react';
 import styles from "../styles/Generate.module.css";
 import Header from '../components/Header';
 import Button from '../components/Button';
@@ -20,6 +19,7 @@ const App = () => {
   const [result, setResult] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const ref = useRef(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -35,10 +35,38 @@ const App = () => {
     setResult('');
 
     try {
-      const result = await axios.post('/api/generate', formData);
-      setResult(result.data);
+      const result = await fetch("/api/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formData,
+        }),
+      })
+      
+      if (!result.ok) {
+        setError(result.statusText);
+      }
+  
+      // This data is a ReadableStream
+      const data = result.body;
+      if (!data) {
+        return;
+      }
+  
+      const reader = data.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+  
+      while (!done) {
+        const { value, done: doneReading } = await reader.read();
+        done = doneReading;
+        const chunkValue = decoder.decode(value);
+        setResult((prev) => prev + chunkValue);
+      }
     } catch (err) {
-      setError("Timeout. Kindly retry");
+      setError(err);
     }
 
     setIsLoading(false);
@@ -63,6 +91,10 @@ const App = () => {
       pauseOnHover: false,
     });
   }
+
+  useEffect(() => {
+    if (ref.current) ref.current.scrollTop = ref.current.scrollHeight;
+  }, [result]);
 
   return (
     <>
@@ -107,7 +139,7 @@ const App = () => {
           <div className={styles.bottom}>
             {error && errorToast()}
             {result && 
-            <div className={styles.result}>
+            <div className={styles.result} ref={ref} key={"prompt"}>
               <button className={styles.button} onClick={handleCopy}>Copy</button>
               {result}
             </div>}

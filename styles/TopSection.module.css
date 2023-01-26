@@ -27,8 +27,11 @@
     object-fit: contain;
 }
 
-.logo {
+.topHeader {
+    display: flex;
+    justify-content: space-between;
     padding: 30px;
+    color: white;
 }
 
 .header {
