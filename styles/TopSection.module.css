@@ -55,16 +55,16 @@
     width: 50%;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
+@media only screen and (min-width: 361px) and (max-width: 767px) {
     .description {
         margin: 0;
-        width: 70%;
+        width: 80%;
         padding: 10px;
     }
     .header {
         margin-top: 40px;
         height: 200px;
-        width: 90%;
+        width: 95%;
         font-size: 50px;
         font-weight: 900;
     }
@@ -79,7 +79,7 @@
     }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 360px) {
     .description {
         margin: 0;
         width: 90%;
@@ -88,7 +88,7 @@
     }
     .header {
         height: 150px;
-        width: 100%;
+        width: 80%;
         font-size: 30px;
         font-weight: 900;
     }
